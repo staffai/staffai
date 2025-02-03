@@ -1,2 +1,2 @@
-https://staffai.github.io/staffai/index
+https://staffai.github.io/staffai/landing
 
