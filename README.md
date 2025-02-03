@@ -1,1 +1,2 @@
-https://staffai.github.io/staffai
+https://staffai.github.io/staffai/index
+
