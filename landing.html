@@ -17,10 +17,9 @@
     <nav>
       <div class="nav-logo">staff.ai</div>
       <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#integrations">Integrations</a>
-        <a href="#pricing">Pricing</a>
+        <a href="#problem">The problem</a>
+        <a href="#solution">Our solution for it</a>
+        <a href="#pricing">Development</a>
         <a href="#contact">Contact</a>
         <!--  <a href="#hero" class="nav-logo">staff.ai</a> finish link logo -->
       </div>
@@ -28,7 +27,7 @@
         class="cta-button"
         onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })"
       >
-        Request a demo
+        Join waitlist
       </button>
     </nav>
 
@@ -42,8 +41,8 @@
         analyze, rank, and engage top candidates—all in one seamless workflow.
       </p>
       <div class="btn-group">
-        <button class="btn btn-primary" onclick="alert('Schedule a demo coming soon!')">
-          Schedule a Demo →
+        <button class="btn btn-primary" onclick="alert('Waitlist coming soon, scroll to Development section')">
+          Join waitlist
         </button>
         <!--  <button class="btn btn-secondary" onclick="alert('Pitch Deck coming soon')">Pitch Deck</button> -->
       </div>
@@ -103,7 +102,7 @@
         </div>
       </section>
 
-      <section id="features">
+      <section id="solution">
         <div class="section-heading">
           <h2>The Solution</h2>
           <p>
@@ -145,6 +144,33 @@
           </div>
         </div>
       </section>
+
+      <section id="hiw">
+        <div class="section-heading">
+          <h2>How It Works</h2>
+          <p>Our streamlined process ensures efficient candidate management:</p>
+        </div>
+        <div class="how-it-works">
+          <div class="step">
+            <div class="step-icon">📤</div>
+            <h3>Upload Resumes</h3>
+            <p>Easily upload resumes from Slack or our website.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">🤖</div>
+            <h3>AI Parsing</h3>
+            <p>Our AI quickly extracts and organizes candidate data.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">📊</div>
+            <h3>Smart Ranking &amp; Engagement</h3>
+            <p>See the top candidates first and engage with them effortlessly.</p>
+          </div>
+        </div>
+      </section>
+<!--
+
+DON'T TOUCH
 
       <section id="pricing">
         <div class="section-heading">
@@ -190,7 +216,9 @@
             </button>
           </div>
         </div>
-      </section>
+      </section> 
+    
+-->
 
       <section id="development">
         <div class="section-heading">
@@ -200,7 +228,7 @@
             version of our product.
           </p>
           <p class="saver"></p>
-          <a class="saver" href="#preseed" target="#preseed">
+          <a class="saver-2" href="#preseed" target="#preseed">
             We are actually only developing an MVP. That is why we are raising 15.000$ in
             USDT for MVP development funding. Learn more &gt;
           </a>
@@ -264,16 +292,12 @@
       <section id="contact">
         <div class="section-heading">
           <h2>Contact Us</h2>
-          <p>Get in touch to learn more or request a demo.</p>
+          <p>Get in touch to learn more.</p> <a href="_blank">or invest in staff.ai.</a> 
         </div>
         <div style="max-width: 600px; margin: 0 auto; text-align: center;">
           <p>
             Email:
-            <a href="mailto:staffai0@outlook.com" style="color: #00C4B4;">info@staff.ai</a>
-          </p>
-          <p>
-            Phone:
-            <a href="tel:+1234567890" style="color: #00C4B4;">+1 234 567 890</a>
+            <a href="mailto:staffai0@outlook.com" style="color: #00C4B4;">staffai0@outlook.com</a>
           </p>
         </div>
       </section>
@@ -287,10 +311,10 @@
         </div>
         <div class="footer-links">
           <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#problem">The Problems we solve</a></li>
+            <li><a href="#solution">The Solutions we propose</a></li>
+            <li><a href="#development">Development stage</a></li>
+            <li><a href="#contact">Contact (you're already here!)</a></li>
           </ul>
         </div>
       </div>
@@ -336,6 +360,41 @@
       faders.forEach((fader) => {
         appearOnScroll.observe(fader);
       });
+
+      // NEW: Typewriter Effect for the ".p1" text
+document.addEventListener('DOMContentLoaded', () => {
+  const typewriterElement = document.querySelector('.p1');
+  const fullText = typewriterElement.textContent;
+  typewriterElement.textContent = '';
+  let index = 0;
+  function typeLetter() {
+    if (index < fullText.length) {
+      typewriterElement.textContent += fullText.charAt(index);
+      index++;
+      const delay = 50 + Math.random() * 100; // Delay between 50ms and 150ms
+      setTimeout(typeLetter, delay);
+    }
+  }
+  typeLetter();
+});
+
+// NEW: Back to Top Button Functionality
+const backToTopButton = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
+  }
+});
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
     </script>
+
+    <!-- NEW: Back to Top Button -->
+<button id="backToTop" title="Back to top">&#8679;</button>
+
   </body>
 </html>
