@@ -427,6 +427,8 @@ footer {
 
 .saver {
   font-weight: bolder;
+  text-decoration: underline;
+  text-decoration-color: #fff
 }
 
 .p1 {
@@ -438,4 +440,49 @@ footer {
 .p2 {
   margin-top: 1px;
   padding-top: 1px;
+}
+
+.saver-2 {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #000000;
+}
+
+/* NEW: Revamped Schedule a Demo Button */
+.btn-primary {
+  background-color: #fff !important; /* White background */
+  color: #00c4b4 !important;           /* Green text */
+  border: 3px solid #00c4b4 !important; /* Thick green outline */
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #00c4b4 !important; /* Green fill on hover */
+  color: #fff !important;              /* White text on hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,196,180,0.5);
+}
+
+/* NEW: Typewriter Effect (blinking caret) on .p1 */
+.p1 {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: 0.5;
+}
+.p1::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #00c4b4;
+  animation: blink 0.7s step-start infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+a {
+  transition: color 0.2s ease;
 }
